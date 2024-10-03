@@ -7,7 +7,7 @@ import { yellowImg } from "../utils";
 import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
 import { models, sizes } from "../constants";
-import { animateWithGsapTimeline } from "../utils/animate";
+import { animateWithGsap, animateWithGsapTimeline } from "../utils/animate";
 const Model = () => {
   const [size, setSize] = useState("small");
   const [model, setModel] = useState({
@@ -15,6 +15,7 @@ const Model = () => {
     color: ["#8F8A81", "#FFE7B9", "#6F6C64"],
     img: yellowImg,
   });
+  const [selectedColor, setSelectedColor] = useState(models[0].color[0]); // Add state for selected color
   //models
   const small = useRef(new THREE.Group());
   const large = useRef(new THREE.Group());
@@ -26,10 +27,7 @@ const Model = () => {
   const cameraControlSmall = useRef();
   const tl = gsap.timeline();
   useGSAP(() => {
-    gsap.to("#heading", {
-      y: 0,
-      opacity: 1,
-    });
+    animateWithGsap("#heading", { y: 0, opacity: 1 },{scrub: true});
   }, []);
 
   useEffect(() => {
@@ -96,9 +94,11 @@ const Model = () => {
                 {models.map((item, i) => (
                   <li
                     key={i}
-                    className="cursor-pointer rounded-full h-6 w-6 mx-2"
+                    className={`cursor-pointer rounded-full h-6 w-6 mx-2 ${selectedColor === item.color[0] ? "border-2 border-blue" : ""}`}
                     style={{ backgroundColor: item.color[0] }}
-                    onClick={() => setModel(item)}
+                    onClick={() =>{ setModel(item)
+                      setSelectedColor(item.color[0]);
+                    }}
                   />
                 ))}
               </ul>
