@@ -27,7 +27,7 @@ const Model = () => {
   const cameraControlSmall = useRef();
   const tl = gsap.timeline();
   useGSAP(() => {
-    animateWithGsap("#heading", { y: 0, opacity: 1 },{scrub: true});
+    animateWithGsap("#heading", { y: 0, opacity: 1 }, { scrub: true });
   }, []);
 
   useEffect(() => {
@@ -94,9 +94,14 @@ const Model = () => {
                 {models.map((item, i) => (
                   <li
                     key={i}
-                    className={`cursor-pointer rounded-full h-6 w-6 mx-2 ${selectedColor === item.color[0] ? "border-2 border-blue" : ""}`}
+                    className={`cursor-pointer rounded-full h-6 w-6 mx-2 ${
+                      selectedColor === item.color[0]
+                        ? "border-2 border-blue"
+                        : ""
+                    }`}
                     style={{ backgroundColor: item.color[0] }}
-                    onClick={() =>{ setModel(item)
+                    onClick={() => {
+                      setModel(item);
                       setSelectedColor(item.color[0]);
                     }}
                   />

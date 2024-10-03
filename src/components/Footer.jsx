@@ -22,11 +22,11 @@ const Footer = () => {
             Developed by Ayan Siddiqui
           </p>
           <div className="flex-center">
-            <a href="https://www.linkedin.com/in/md-ayan-" className="font-semibold hover:underline hover:text-blue text-gray text-xs">
+            <a href="https://www.linkedin.com/in/md-ayan-" target="_blank" className="font-semibold hover:underline hover:text-blue text-gray text-xs">
               LinkedIn  
             </a>
               <span className="mx-2"> | </span>
-            <a href="https://github.com/responsive-we" className="font-semibold hover:underline hover:text-blue text-gray text-xs">
+            <a href="https://github.com/responsive-we" target="_blank" className="font-semibold hover:underline hover:text-blue text-gray text-xs">
               GitHub  
             </a>
               <span className="mx-2"> | </span>
