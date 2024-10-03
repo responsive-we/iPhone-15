@@ -2,7 +2,7 @@ import React,{useRef} from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { animateWithGsap } from '../utils/animate'
-import { explore1Img, exploreVideo } from '../utils'
+import { explore1Img,explore2Img, exploreVideo } from '../utils'
 
 const Features = () => {
     const videoRef = useRef()
@@ -52,7 +52,7 @@ const Features = () => {
                             <img src={explore1Img} alt="titanium" className='feature-video g_grow' />
                         </div>
                         <div className="flex-1 overflow-hidden h-[50vh]">
-                            <img src={explore1Img} alt="titanium" className='feature-video g_grow' />
+                            <img src={explore2Img} alt="titanium2" className='feature-video g_grow' />
                         </div>
                     </div>
                     <div className="feature-text-container">
